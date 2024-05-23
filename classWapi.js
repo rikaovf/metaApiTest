@@ -57,6 +57,74 @@ export default class WapiBusiness {
         })
     }
 
-    
+    getSubscribedApps(){
+        var options = {
+            headers: {
+                Authorization: `Bearer ${this.bearer}`,
+            }
+        }
+
+        fetch(`https://graph.facebook.com/${this.version}/${this.wabaid}/subscribed_apps`, options)
+        .then((res)=>{
+            if(res.status == '200'){
+                return(res.json())
+            } else{
+                return (`${res.status} ${res.statusText}`)
+            }
+            
+        })
+        .then((text)=>{
+            console.log('-'.repeat(10) + 'All Business Numbers' + '-'.repeat(10))
+            console.log(text.data)
+            console.log('-'.repeat(40))
+        })
+    }
+
+    getAllTemplates(){
+        var options = {
+            headers: {
+                Authorization: `Bearer ${this.bearer}`,
+            }
+        }
+
+        fetch(`https://graph.facebook.com/${this.version}/${this.wabaid}/message_templates`, options)
+        .then((res)=>{
+            if(res.status == '200'){
+                return(res.json())
+            } else{
+                return (`${res.status} ${res.statusText}`)
+            }
+            
+        })
+        .then((text)=>{
+            console.log('-'.repeat(10) + 'Get all templates' + '-'.repeat(10))
+            console.log(text)
+            console.log('-'.repeat(40))
+        })
+    }
+
+
+    whatsappBusinessMessaging(){
+        var options = {
+            headers: {
+                Authorization: `Bearer ${this.bearer}`,
+            }
+        }
+
+        fetch(`https://graph.facebook.com/${this.version}/${this.wabaid}/whatsapp_business_messaging`, options)
+        .then((res)=>{
+            if(res.status == '200'){
+                return(res.json())
+            } else{
+                return (`${res.status} ${res.statusText}`)
+            }
+            
+        })
+        .then((text)=>{
+            console.log('-'.repeat(10) + 'All messages' + '-'.repeat(10))
+            console.log(text)
+            console.log('-'.repeat(40))
+        })
+    }
 
 }
