@@ -143,10 +143,20 @@ class WapiBusiness {
 
         fetch(`https://graph.facebook.com/${this.version}/${this.wabaid}/whatsapp_business_messaging`, options)
         .then((res)=>{
-            return res.json()
+            if(res.status == '200'){
+                return(res.json())
+            } else{
+                return (`${res.status} ${res.statusText}`)
+            }
         })
         .then((text)=>{
             console.log('-'.repeat(10) + 'All messages' + '-'.repeat(10))
+            
+            if(typeof(obj) == 'string'){
+                describeError(obj)
+                return
+            }
+            
             console.log(text)
             console.log('-'.repeat(40))
         })
