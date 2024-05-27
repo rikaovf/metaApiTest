@@ -4,16 +4,17 @@
 }
 
 body{
+    display: flex;
     width: 100vh;
     height: 100vh;
+    flex-direction: row;
+    align-items: center;
 }
 
 .testes{
     border: 2px solid;
     display: flex;
     flex-direction: row;    
-    margin-top: 40%;
-    margin-left: 20%;
 }
 
 .botao{
