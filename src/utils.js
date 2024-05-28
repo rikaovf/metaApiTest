@@ -31,3 +31,19 @@ function getAllTemplates(){
 function whatsappBusinessMessaging(){
     apiTest.whatsappBusinessMessaging()
 }
+
+function sendMessageTo(){
+    const numero = document.getElementById('number')
+    const mensagem = document.getElementById('msg')
+    
+    if(apiTest.isValid(numero.value, mensagem.value)){
+        apiTest.sendMessageTo(mensagem.value, numero.value)
+        
+        mensagem.value = ''
+    } else{
+        alert("Existem inconsistências nos parâmetros de mensagens. Confira e envie novamente!")
+        
+        numero.value = ''
+    }
+    
+}

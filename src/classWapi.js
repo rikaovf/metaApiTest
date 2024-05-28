@@ -163,6 +163,72 @@ class WapiBusiness {
     }
 
 
+    
+    sendMessageTo(text, to){
+        const data = {
+            messaging_product: "whatsapp",
+            recipient_type: "individual",
+            to: to,
+            text: { body: text },
+        }
+
+        var options = {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${this.bearer}`,
+                'Content-Type': 'application/json',
+            },            
+            body: JSON.stringify(data)
+        }
+
+        
+        fetch(`https://graph.facebook.com/${this.version}/${this.idNum}/messages`, options)
+        .then((res)=>{
+            return(res.json())
+        })
+        .then((obj)=>{
+            console.log('-'.repeat(10) + 'send message to' + '-'.repeat(10))
+            if(obj.error){
+                alert(obj.error.error_data.details)    
+            }
+            console.log(obj)
+            console.log('-'.repeat(40))
+
+            if(obj.messaging_product){
+                const dataRead = {
+                    messaging_product: "whatsapp",
+                    status: "read",
+                    message_id: obj.messaging_product,
+                }
+
+                options.body = JSON.stringify(dataRead)
+                
+                fetch(`https://graph.facebook.com/${this.version}/${this.idNum}/messages`, options)
+                .then((res)=>{
+                    return(res.json())
+                })
+                .then((read)=>{
+                    console.log('-'.repeat(10) + 'message marked as read' + '-'.repeat(10))
+                    console.log(obj)
+                    console.log('-'.repeat(40))
+                })
+            }
+
+        })
+    }
+
+
+    
+    isValid(number, message){
+        if( isNaN(number) || number == '' || message == ''){
+            return false
+        } else{
+            return true   
+        }
+    }
+    
+    
+    
     #describeError(error){
         console.log(error)
     }

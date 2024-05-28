@@ -9,12 +9,22 @@
     <title>Teste de Api</title>
 </head>
 <body>
-    <div id="testes" class="testes">
-        <button class="botao" onclick="getInfoAccount()">Info Account</button>
-        <button class="botao" onclick="getAllBusinessNumbers()">All business numbers</button>
-        <button class="botao" onclick="getSubscribedApps()">Subscribed apps</button>
-        <button class="botao" onclick="getAllTemplates()">All templates</button>
-        <button class="botao" onclick="whatsappBusinessMessaging()">Get messages</button>
+    <div id="container">
+        <div id="envio" class="envio">
+            <div id="inputs" class="inputs">
+                <input type="text" placeholder="Número" class="numero" name="to" id="number" autofocus>
+                <input type="text" placeholder="Mensagem" class="mensagem" name="msg" id="msg">
+            </div>
+            <button id="enviar" class="enviar" onclick="sendMessageTo()">Enviar</button>
+        </div>
+    
+        <div id="testes" class="testes">
+            <button class="botao" onclick="getInfoAccount()">Info Account</button>
+            <button class="botao" onclick="getAllBusinessNumbers()">All business numbers</button>
+            <button class="botao" onclick="getSubscribedApps()">Subscribed apps</button>
+            <button class="botao" onclick="getAllTemplates()">All templates</button>
+            <button class="botao" onclick="whatsappBusinessMessaging()">Get messages</button>
+        </div>
     </div>
 </body>
 </html>

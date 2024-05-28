@@ -5,16 +5,57 @@
 
 body{
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100vh;
     height: 100vh;
+}
+
+#container{
+    position: absolute;
+    left:20%;
+}
+
+.envio{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    border: 2px solid black;
+    margin-top: 30%;
+    margin-bottom: 10px;
+}
+
+.inputs{
+    display: flex;
     flex-direction: row;
-    align-items: center;
+}
+
+.numero{
+    padding: 2px;
+    margin-top: 5px;
+    margin-left: 2px;
+    height: 30px;
+}
+
+.mensagem{
+    padding: 2px;
+    margin-top: 5px;
+    margin-left: 2px;
+    height: 30px;
+    width: 80%;
+}
+
+.enviar{
+    margin: 5px 5px 5px;
+    height: 30px;
 }
 
 .testes{
     border: 2px solid;
     display: flex;
     flex-direction: row;    
+    min-width: 100%;
+    margin-bottom: 30%;
 }
 
 .botao{
