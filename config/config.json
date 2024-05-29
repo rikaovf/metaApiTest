@@ -1,6 +1,6 @@
 {
-    "id" : "103785315793824",
-    "wabaid" : "102818189225798",
-    "version" : "v19.0",
-    "bearer" : "EAAORpbNZAEZAQBO09XNacyhOJnQaHHwUTvZB8hZA9Yj22mqy9aNDDh0koZAtnUBBWtsEzY80ZChDSN0pdkDYZCPXvvSMjoDKAzFlNfWnME9O0ZCPY0QTm799Ol9ZC41BSmH5Ju32Q43ZCCHakjJ5emAlVuOqobvt4M9Q2p1S0FOypuMJOs0aZCJ3mBnlLcEB9CS8nsKq6xF0zYN6XZBpTYsZCtv7e"
+    "id" : "{id do numero}",
+    "wabaid" : "{id do wbusiness}",
+    "version" : "{versão do app}",
+    "bearer" : "{token de acesso}"
 }
